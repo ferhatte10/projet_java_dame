@@ -8,7 +8,7 @@ Un jeu de dames avec une interface graphique implémentée en Java Swing. Le pro
 
 ## Compiler et exécuter
 ### Manuel
-1. Dans un terminal, mettez vous dans le dossier `src/`
+1. Dans un terminal, mettez vous dans le dossier du projet courrant
 2. Compilez avec `javac -d out ui/*.java model/*.java logic/*.java`
 3. Exécutez avec `java -cp ./out ui.Main`
 
