@@ -12,6 +12,8 @@ Un jeu de dames avec une interface graphique implémentée en Java Swing. Le pro
 2. Compilez avec `javac -d out ui/*.java model/*.java logic/*.java`
 3. Exécutez avec `java -cp ./out ui.Main`
 
+Nb : la version de Java utilisée est la version de la plateforme linux (openjdk-18.0.1.1)
+
 
 ## Features
 ### Interface graphique
