@@ -1,5 +1,5 @@
 # Jeu de Dame en Java
-<img src="images/checkers.png" alt="Jeu de Dame" width="500">
+<img src="images/Damier.png" alt="Jeu de Dame" width="500">
 
 ## Déscription
 Un partie de dames avec une interface graphique implémentée en Java Swing. Le programme prend en charge un simple joueur (un humain) Vs un autre joueur en jouant tour par tour.

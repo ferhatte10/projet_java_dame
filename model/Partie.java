@@ -18,17 +18,6 @@ public class Partie {
 	public Partie() {
 		restart();
 	}
-	
-	public Partie(String state) {
-		setGameState(state);
-	}
-	
-	public Partie(Plateau plateau, boolean isP1Turn, int sautIndice) {
-		this.plateau = (plateau == null)? new Plateau() : plateau;
-		this.isP1Turn = isP1Turn;
-		this.sautIndice = sautIndice;
-	}
-	
 
 	public Partie copy() {
 		Partie g = new Partie();
@@ -55,19 +44,17 @@ public class Partie {
 
 	public boolean deplacer(int startIndice, int endIndice) {
 		
-		// Validate the move
 		if (!LogicDeplacement.isValidDeplacement(this, startIndice, endIndice)) {
 			return false;
 		}
 		
-		// Make the move
 		Point middle = Plateau.middle(startIndice, endIndice);
 		int midIndice = Plateau.toIndice(middle);
 		this.plateau.set(endIndice, plateau.get(startIndice));
 		this.plateau.set(midIndice, Plateau.Vide);
 		this.plateau.set(startIndice, Plateau.Vide);
 		
-		// Make the checker a king if necessary
+		// Transforme le pion en dame si il est au bout du plateau
 		Point end = Plateau.toPoint(endIndice);
 		int id = plateau.get(endIndice);
 		boolean switchTurn = false;

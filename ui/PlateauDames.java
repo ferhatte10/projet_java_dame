@@ -127,7 +127,7 @@ public class PlateauDames extends JButton{
 		final int BOX_PADDING = 4;
 		final int Taille_damier = Math.max(0, BOX_SIZE - 2 * BOX_PADDING);
 		
-		// dessiner le plateau
+
 
 		g.setColor(Color.BLACK);
 		g.drawRect(OFFSET_X - 1, OFFSET_Y - 1, BOX_SIZE * 8 + 1, BOX_SIZE * 8 + 1);
@@ -152,16 +152,11 @@ public class PlateauDames extends JButton{
 		for (int y = 0; y < 8; y ++) {
 			int cy = OFFSET_Y + y * BOX_SIZE + BOX_PADDING;
 			for (int x = (y + 1) % 2; x < 8; x += 2) {
-
 				int id = b.get(x, y); // get l'id de la case pour savoir si c'est la pos d'un pion noir, blanc ou dame noire, blanche
-				
-
 				if (id == Plateau.Vide) {
 					continue;
 				}
-				
 				int cx = OFFSET_X + x * BOX_SIZE + BOX_PADDING;
-
 				// pions noirs
 				if (id == Plateau.Pion_blanc) {
 					g.setColor(Color.DARK_GRAY);
@@ -269,26 +264,6 @@ public class PlateauDames extends JButton{
 	public void setP2(Joueur joueur2) {
 		this.J2 = joueur2;
 	}
-	
-	public Joueur getCurrentPlayer() {
-		return partie.isP1Turn()? J1 : J2;
-	}
-
-	public Color getCaseBlanche() {
-		return CaseBlanche;
-	}
-
-	public void setCaseBlanche(Color caseBlanche) {
-		this.CaseBlanche = (caseBlanche == null)? Color.WHITE : caseBlanche;
-	}
-
-	public Color getCaseNoire() {
-		return CaseNoire;
-	}
-
-	public void setCaseNoire(Color caseNoire) {
-		this.CaseNoire = (caseNoire == null)? Color.BLACK : caseNoire;
-	}
 
 	private void handleClick(int x, int y) {
 		
@@ -298,11 +273,11 @@ public class PlateauDames extends JButton{
 		}
 
 		// Determiner si un carre est cliqué
-		final int Longeur = getWidth(), Largeur = getHeight();
+		final int Longueur = getWidth(), Largeur = getHeight();
 
-		final int DIM = Math.min(Longeur, Largeur), BOX_SIZE = (DIM - 2 * PADDING) / 8;
+		final int DIM = Math.min(Longueur, Largeur), BOX_SIZE = (DIM - 2 * PADDING) / 8;
 
-		final int OFFSET_X = (Longeur - BOX_SIZE * 8) / 2;
+		final int OFFSET_X = (Longueur - BOX_SIZE * 8) / 2;
 		x = (x - OFFSET_X) / BOX_SIZE; // pour avoir la pos x  exact sur la case
 		final int OFFSET_Y = (Largeur - BOX_SIZE * 8) / 2;
 
@@ -358,7 +333,6 @@ public class PlateauDames extends JButton{
 				return false;
 			}
 		}
-
 		return true;
 	}
 
