@@ -7,16 +7,16 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		//Set the look and feel to the OS look and feel
+		//Chosir le même theme que le système d'exploitation
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		// Create a window to display the checkers game
-		DameFenetre window = new DameFenetre();
-		window.setDefaultCloseOperation(DameFenetre.EXIT_ON_CLOSE);
-		window.setVisible(true);
+		// Céer la fenêtre du jeu de dames
+		DameFenetre fenetre = new DameFenetre();
+		fenetre.setDefaultCloseOperation(DameFenetre.EXIT_ON_CLOSE);
+		fenetre.setVisible(true);
 	}
 }

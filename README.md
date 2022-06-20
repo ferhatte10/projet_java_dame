@@ -2,7 +2,7 @@
 <img src="images/checkers.png" alt="Jeu de Dame" width="500">
 
 ## Déscription
-Un jeu de dames avec une interface graphique implémentée en Java Swing. Le programme prend en charge un simple joueur (un humain) Vs un autre joueur en jouant tour par tour.
+Un partie de dames avec une interface graphique implémentée en Java Swing. Le programme prend en charge un simple joueur (un humain) Vs un autre joueur en jouant tour par tour.
 
 
 
@@ -17,5 +17,5 @@ Nb : la version de Java utilisée est la version de la plateforme linux (openjdk
 
 ## Features
 ### Interface graphique
-Le programme de jeu de dames est livré complet avec tous les composants de l'interface utilisateur graphique qui s'adaptent à la taille de la fenêtre. Il s'agit d'une interface utilisateur conviviale qui comporte des options permettant de changer le type de joueur pour les joueurs 1 et 2, et de relancer la partie. En outre, il fournit une interface utilisateur de damier pour montrer l'état actuel du jeu.
+Le programme de partie de dames est livré complet avec tous les composants de l'interface utilisateur graphique qui s'adaptent à la taille de la fenêtre. Il s'agit d'une interface utilisateur conviviale qui comporte des options permettant de changer le type de joueur pour les joueurs 1 et 2, et de relancer la partie. En outre, il fournit une interface utilisateur de damier pour montrer l'état actuel du partie.
 

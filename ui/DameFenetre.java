@@ -6,77 +6,44 @@ import java.io.Serial;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import model.Player;
-
 public class DameFenetre extends JFrame {
 
 	@Serial
 	private static final long serialVersionUID = 8782122389400590079L;
+	private final PlateauDames Plateau;
+	public static final String Titre = "Jeu de Dame en Java";
+	public static final int Longueur = 620;
+	public static final int Largeur = 600;
 	
-	public static final int DEFAULT_WIDTH = 620;
-	
-	public static final int DEFAULT_HEIGHT = 600;
-	
-	public static final String DEFAULT_TITLE = "Jeu de Dame en Java";
-	
-	private CheckerBoard board;
-	
-	private OptionPanel opts;
 
-	
-	public DameFenetre() {
-		this(DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_TITLE);
-	}
-	
-	public DameFenetre(Player player1, Player player2) {
-		this();
-		setP1(player1);
-		setP2(player2);
-	}
-	
+
 	public DameFenetre(int width, int height, String title) {
 		
-		// Setup the window
 		super(title);
 		super.setSize(width, height);
 		super.setMinimumSize(new Dimension(width, height));
-		super.setLocationByPlatform(true);
-		
-		// Setup the components
+		super.setLocationRelativeTo(null);
+
+		this.Plateau = new PlateauDames(this);
+
 		JPanel layout = new JPanel(new BorderLayout());
-		this.board = new CheckerBoard(this);
-		this.opts = new OptionPanel(this);
-		layout.add(board, BorderLayout.CENTER);
-		layout.add(opts, BorderLayout.SOUTH);
+		layout.add(Plateau, BorderLayout.CENTER);
+
+		PanelOptions options = new PanelOptions(this);
+		layout.add(options, BorderLayout.SOUTH);
+
 		this.add(layout);
 
 	}
-	
-	public CheckerBoard getBoard() {
-		return board;
+	public DameFenetre() { // Constructeur par défaut
+		this(Longueur, Largeur, Titre);
 	}
-
-
-	public void setP1(Player player1) {
-		this.board.setP1(player1);
-		this.board.update();
-	}
-	
-
-	public void setP2(Player player2) {
-		this.board.setP2(player2);
-		this.board.update();
-	}
-	
 
 	public void restart() {
-		this.board.getPartie().restart();
-		this.board.update();
+		this.Plateau.setSelected(null);
+		this.Plateau.getPartie().restart();
+		this.Plateau.update();
 	}
-	
-	public void setGameState(String state) {
-		this.board.getPartie().setGameState(state);
-	}
-	
+
 
 }
